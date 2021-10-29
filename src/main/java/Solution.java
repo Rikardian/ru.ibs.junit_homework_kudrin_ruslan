@@ -5,6 +5,7 @@ import java.util.List;
 public class Solution {
     public static void main(String[] args) {
         String fileName = "";
+        boolean isCorrect;
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
             fileName = reader.readLine();
@@ -13,7 +14,9 @@ public class Solution {
         }
 
         Solution solution = new Solution();
+        isCorrect = solution.checkFile(fileName);
 
+        if (isCorrect)
         solution.fizzBuzzer(fileName);
     }
 
@@ -54,5 +57,19 @@ public class Solution {
     public void fizzBuzzer(String fileName){
         List<String> result = numberChanger(readFile(fileName));
         result.forEach(System.out::println);
+    }
+
+    public boolean checkFile(String fileName){
+        List<String> list = readFile(fileName);
+        boolean isCorrect = true;
+        try {
+            for (String value : list) {
+                int num = Integer.parseInt(value);
+            }
+        } catch (NumberFormatException e){
+            System.out.println("Файл имеет некорректное содержание");
+            isCorrect = false;
+        }
+        return isCorrect;
     }
 }
