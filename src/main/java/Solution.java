@@ -14,7 +14,7 @@ public class Solution {
         }
 
         Solution solution = new Solution();
-        isCorrect = solution.checkFile(fileName);
+        isCorrect = solution.checkFile(solution.readFile(fileName));
 
         if (isCorrect)
         solution.fizzBuzzer(fileName);
@@ -59,8 +59,7 @@ public class Solution {
         result.forEach(System.out::println);
     }
 
-    public boolean checkFile(String fileName){
-        List<String> list = readFile(fileName);
+    public boolean checkFile(List<String> list){
         boolean isCorrect = true;
         try {
             for (String value : list) {

@@ -19,15 +19,17 @@ class checkFileTest {
     public void testCheckFile(){
         List<String> list = new ArrayList<>();
         list.add("1");
-        list.add("hello world");
-        list.add("1");
-        list.add("1");
-        list.add("1");
+        list.add("3");
+        list.add("5");
+        list.add("8");
+        list.add("15");
 
         final File mockedFile = Mockito.mock(File.class);
         Mockito.when(mockedFile.getName()).thenReturn("my_file_name");
-        Mockito.when(solution.readFile(mockedFile.getName())).thenReturn(list);
 
-        assertEquals(false, solution.checkFile(mockedFile.getName()));
+        final Solution mockedSolution = Mockito.mock(Solution.class);
+        Mockito.when(mockedSolution.readFile(mockedFile.getName())).thenReturn(list);
+
+        assertTrue(mockedSolution.checkFile(mockedSolution.readFile(mockedFile.getName())));
     }
 }
