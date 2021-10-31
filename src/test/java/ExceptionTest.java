@@ -19,6 +19,6 @@ class ExceptionTest {
         File mockedFile = Mockito.mock(File.class);
         Mockito.when(mockedFile.getName()).thenReturn("my_file_name");
 
-        assertEquals(new FileNotFoundException(), solution.readFile(mockedFile.getName()));
+        assertEquals(null, solution.readFile(mockedFile.getName()));
     }
 }
