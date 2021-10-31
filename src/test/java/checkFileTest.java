@@ -30,6 +30,6 @@ class checkFileTest {
         final Solution mockedSolution = Mockito.mock(Solution.class);
         Mockito.when(mockedSolution.readFile(mockedFile.getName())).thenReturn(list);
 
-        assertTrue(mockedSolution.checkFile(mockedSolution.readFile(mockedFile.getName())));
+        assertTrue(solution.checkFile(mockedSolution.readFile(mockedFile.getName())));
     }
 }
