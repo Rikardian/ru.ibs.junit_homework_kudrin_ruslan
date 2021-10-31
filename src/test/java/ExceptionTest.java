@@ -3,7 +3,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,6 +18,6 @@ class ExceptionTest {
         File mockedFile = Mockito.mock(File.class);
         Mockito.when(mockedFile.getName()).thenReturn("my_file_name");
 
-        assertEquals(null, solution.readFile(mockedFile.getName()));
+        assertNull(solution.readFile(mockedFile.getName()));
     }
 }
